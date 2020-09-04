@@ -13,9 +13,9 @@ eff_cluster<-eff_ex%>%
   filter(count>7)%>%# remove clusters with less than 5 genes
   dplyr::mutate(names=paste(hub_gene, count,sep="_"))# create new labels
 
-
+colnames(eff_cluster)<-c("1","2","3","4","5","6","7","8","hub_gene","cluster","genes","count","names")
 long_eff_clu<-eff_cluster%>%
-  pivot_longer(cols=t0:t144, values_to="expression", names_to="time_points")
+  pivot_longer(cols=1:8, values_to="expression", names_to="time_points")
 long_eff_clu$time_points<-
   ordered(long_eff_clu$time_points, 
           levels=c("t0","t8","t16","t24","t48","t72","t96","t144"))

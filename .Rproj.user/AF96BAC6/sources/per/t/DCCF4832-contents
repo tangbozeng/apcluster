@@ -1,0 +1,29 @@
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+test<-read.csv("mixed.csv")
+test$start<-as.integer(test$start)
+test$percentage<-as.numeric(test$percentage)
+
+ggplot(data=test, 
+       aes(x=test$start,
+           y=test$percentage,
+           color=test$type))+
+  theme_classic()+
+  geom_line(alpha=0.2, size=0.2)+
+  facet_wrap(~test$chr, scales = "free")+
+  ylim(c(1.00,0.00))+
+  theme(strip.text = element_text(size=15,
+                                  color="black", 
+                                  family="Arial"))+
+  scale_colour_manual(values=c("red","blue"))
+
+ylab("relative ubiquitination abundance")+ 
+  xlab("relative protein abundance")+
+  theme(legend.position = "none")+
+  theme(plot.title = element_text(color="black", size=20, face="bold", family="Arial"),
+        axis.title.x = element_text(color="black", size=20, face="bold", family="Arial"),
+        axis.title.y = element_text(color="black", size=20, face="bold", family="Arial"))+ 
+  theme(axis.text.x = element_text(color="black", size=20, face="bold", family="Arial"),
+        axis.text.y = element_text(color="black", size=14, face = "bold", family="Arial"))+
+  scale_colour_manual(values=c("red", "yellow", "blue","green","black","gray","pink","purple","cyan"))

@@ -1,0 +1,32 @@
+{
+    "id": "6FD23FBA",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1599248160750.0,
+    "source_on_save": false,
+    "relative_order": 7,
+    "properties": {
+        "expression": "wide_clustered",
+        "caption": "wide_clustered",
+        "totalObservations": 463,
+        "displayedObservations": 463,
+        "variables": 13,
+        "cacheKey": "B83C87EB",
+        "object": "wide_clustered",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=wide_clustered&cache_key=B83C87EB&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 140735632796400,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1599248160750,
+    "read_only": false,
+    "read_only_alternatives": []
+}

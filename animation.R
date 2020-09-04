@@ -12,7 +12,7 @@ p<-ggplot(data = long_eff_clu,
        aes(x=long_eff_clu$time_points,
            y=log2(long_eff_clu$expression),
            group=long_eff_clu$genes,
-           color=long_eff_clu$names))+geom_point(size=0.01)+
+           color=long_eff_clu$names))+geom_point(size=0.5)+
   geom_line(aes(group=long_eff_clu$genes))+
   facet_wrap(~long_eff_clu$names, scales = "free")+
   theme_classic()+
@@ -25,8 +25,10 @@ p<-ggplot(data = long_eff_clu,
   theme(plot.title = element_text(color="black", size=20,  family="Arial"),
         axis.title.x = element_text(color="black", size=20, family="Arial"),
         axis.title.y = element_text(color="black", size=20, family="Arial"))+ 
-  theme(axis.text.x = element_text(color="black", size=8,  family="Arial"),
+  theme(axis.text.x = element_text(color="black", size=0.01,  family="Arial"),
         axis.text.y = element_text(color="black", size=12,  family="Arial"))+ 
   scale_colour_hue()+
-  transition_reveal(long_eff_clu$time_points)
+  transition_reveal(long_eff_clu$time_points)+
+
+animate(p, height=600, width=800)
 
